@@ -40,8 +40,9 @@ function preload(){
 
 function setup() {
   createCanvas(displayWidth/1, displayHeight/2);
-  bg1 = createSprite (displayWidth/2, displayHeight/4, displayWidth/2, displayHeight/4);
+  bg1 = createSprite (displayWidth/2, displayHeight/4, displayWidth, displayHeight);
   bg1.addImage (bg);
+  bg1.scale=2;
   trex = createSprite(displayWidth/2 - 300,displayHeight/4-20,20,50);
   trex.addAnimation("running",runningtrex);
   trex.addAnimation("collided",deadtrex);
@@ -196,8 +197,9 @@ function reset(){
   trex.changeAnimation("running",runningtrex);
   obstaclegroup.destroyEach();
   cloudsgroup.destroyEach();
-  if(localStorage["HighestScore"]<score){
-    localStorage["HighestScore"]=score;
+  if(HighestScore<score){
+    HighestScore=score; 
+  }
   }
   
   score = 0;
