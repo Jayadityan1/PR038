@@ -203,4 +203,4 @@ function reset(){
   }
   
   score = 0;
-}
+
