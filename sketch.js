@@ -17,7 +17,7 @@ var checkpoint, jump, die;
 
 var bg, bg1;
 
-localStorage["HighestScore"]=0;
+HighestScore=0;
 
 function preload(){
   runningtrex = loadAnimation ("trex1.png", "trex3.png", "trex4.png");
@@ -140,11 +140,13 @@ function draw() {
   
   trex.collide (invisibleground);
   
-  drawSprites();
-
-    //display score
+  //display score
     text("Score: "+ score, displayWidth/2,displayHeight/4 - 150);
   
+  
+  drawSprites();
+
+    
 }
 
 function spawnclouds(){
